@@ -3,24 +3,4 @@ embed-server --server-config=standalone.xml --std-out=echo
 
 # Configure jboss-logging event listener
 /providers/module:org.keycloak.examples.event-sysout:add
-#
-#
-#/subsystem=logging/root-logger=ROOT:add-handler(name="FILE")
-#/subsystem=logging/periodic-rotating-file-handler=FILE:add
-#/subsystem=logging/periodic-rotating-file-handler=FILE/write-attribute(name=append,value=true)
-#/subsystem=logging/periodic-rotating-file-handler=FILE/write-attribute(name=file,relative-to="jboss.server.log.dir",path="server.log")
-#/subsystem=logging/periodic-rotating-file-handler=FILE/write-attribute(name=suffix,value=.yyyy-MM-dd)
-#
-#
-#
-## Configure jboss-logging event listener
-#/subsystem=keycloak-server/spi=eventsListener:add(default-provider=jboss-logging)
-#/subsystem=keycloak-server/spi=eventsListener/provider=jboss-logging:add(enabled=true)
-## Propgate success events to INFO instead of DEBUG
-## This allows to track successful logins in log analysis
-#/subsystem=keycloak-server/spi=eventsListener/provider=jboss-logging:write-attribute(name=properties.success-level,value=info)
-#/subsystem=keycloak-server/spi=eventsListener/provider=jboss-logging:write-attribute(name=properties.error-level,value=warn)
-#
-#
-#
-#
+
