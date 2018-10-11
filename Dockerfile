@@ -1,6 +1,6 @@
 FROM jboss/keycloak:4.5.0.Final
 
-ADD event-listener-sysout-example.jar /opt/jboss/keycloak/standalone/deployments
+ADD event-listener-sysout-example.jar /opt/jboss/keycloak/standalone/deployments/
 
 CMD /opt/jboss/keycloak/bin/jboss-cli.sh --command="module add --name=org.keycloak.examples.event-sysout --resources=target/event-listener-sysout"
 
